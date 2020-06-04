@@ -7,6 +7,11 @@ class MenuFunctions:
         self.root = root
         self.graphics = graphics
 
+    def clear(self):
+        def _clear():
+            self.graphics.clear()
+        return _clear
+
     def line(self):
         def _line():
             self.graphics.line(Point(0, 0), Point(100, 100))
@@ -91,6 +96,7 @@ def create_menu(root, graphics):
     editmenu.add_command(label="Square", command=menu.square())
     editmenu.add_command(label="Select Color", command=menu.select_color())
     editmenu.add_command(label="Select Fill Color", command=menu.select_fill_color())
+    editmenu.add_command(label="Clear", command=menu.clear())
 
 
     menubar.add_cascade(label="Shapes", menu=editmenu)
